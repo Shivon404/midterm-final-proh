@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Welcome!</title>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .bg-image {
+      background-image: url('bg.png');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+    }
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(39, 39, 51, 0.8);
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 11px;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: rgb(23, 23, 24);}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+    
+  </style>
+</head>
+<body class="bg-image min-h-screen">
+  <div class="header">
+    <div class="left-header">
+      <h2 class="greetings">Hello <span id="userEmail"></span>, <span id="greeting"></span></h2>
+    </div>
+    <div class="middle-header">
+    </div>
+    <div class="right-header">
+      <div class="dropdown">
+        <img class="profile-logo" src="b85f3a28fd572685b0dab45537113294.jpg">
+        <div class="dropdown-content">
+          <a href="profile.html">Profile</a>
+          <a href="body.html">Home</a>
+          <a href="html.html">Logout</a>
+        </div>
+      </div>
+      <i id="iconToggle" class="fa fa-sun-o" style="font-size:35px; color: white; cursor: pointer;"></i>
+    </div>
+  </div>
+  <div class="left-sidebar">
+    <div class="left-sidebar-content">
+      <!-- Add your content here -->
+      <h2 style="color: white; font-size: 19px; padding-bottom: 10px; font-weight: bold;">Getting started</h2>
+      <a href="#">Introduction</a>
+      <a href="#">Download</a>
+      <a href="#">Contents</a>
+      <a href="#">Browsers & devices</a>
+      <a href="#">Javascript</a>
+      <a href="#">Webpack</a>
+      <a href="#">Parcel</a>
+      <a href="#">Vite</a>
+      <a href="#">Accessibility</a>
+      <a href="#">RFS</a>
+      <a href="#">RTL</a>
+      <a href="#" style="padding-bottom: 15px;">Contribute</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Customize</h2>
+      <a href="#">Overview</a>
+      <a href="#">Sass</a>
+      <a href="#">Options</a>
+      <a href="#">Color</a>
+      <a href="#">Color modes</a>
+      <a href="#">Components</a>
+      <a href="#">CSS variables</a>
+      <a href="#" style="padding-bottom: 15px;">Optimize</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Content</h2>
+      <a href="#">Reboot</a>
+      <a href="#">Typography</a>
+      <a href="#">Images</a>
+      <a href="#">Tables</a>
+      <a href="#" style="padding-bottom: 15px;">Figures</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Forms</h2>
+      <a href="#">Overview</a>
+      <a href="#">Form control</a>
+      <a href="#">Select</a>
+      <a href="#">Checks & radios</a>
+      <a href="#">Range</a>
+      <a href="#">Input group</a>
+      <a href="#">Floating labels</a>
+      <a href="#">Layout</a>
+      <a href="#" style="padding-bottom: 15px;">Validation</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Components</h2>
+      <a href="#">Accordion</a>
+      <a href="#">Alerts</a>
+      <a href="#">Badge</a>
+      <a href="#">Breadcrumb</a>
+      <a href="#">Buttons</a>
+      <a href="#">Buttons group</a>
+      <a href="#">Card</a>
+      <a href="#">Carousel</a>
+      <a href="#">Close button</a>
+      <a href="#">Collapse</a>
+      <a href="#">Dropdowns</a>
+      <a href="#">List group</a>
+      <a href="#">Modal</a>
+      <a href="#">Navbar</a>
+      <a href="#">Navs & tabs</a>
+      <a href="#">Offcanvas</a>
+      <a href="#">Pagination</a>
+      <a href="#">Placeholders</a>
+      <a href="#">Popovers</a>
+      <a href="#">Progress</a>
+      <a href="#">Scrollspy</a>
+      <a href="#">Spinners</a>
+      <a href="#">Toasts</a>
+      <a href="#" style="padding-bottom: 15px;">Tooltips</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Helpers</h2>
+      <a href="#">Clearfix</a>
+      <a href="#">Color & background</a>
+      <a href="#">Colored links</a>
+      <a href="#">Focus ring</a>
+      <a href="#">Icon link</a>
+      <a href="#">Position</a>
+      <a href="#">Ratio</a>
+      <a href="#">Stacks</a>
+      <a href="#">Stretched link</a>
+      <a href="#">Text truncation</a>
+      <a href="#">Vertical rule</a>
+      <a href="#" style="padding-bottom: 15px;">Visually hidden</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Helpers</h2>
+      <a href="#">Clearfix</a>
+      <a href="#">Color & background</a>
+      <a href="#">Colored links</a>
+      <a href="#">Focus ring</a>
+      <a href="#">Icon link</a>
+      <a href="#">Position</a>
+      <a href="#">Ratio</a>
+      <a href="#">Stacks</a>
+      <a href="#">Stretched link</a>
+      <a href="#">Text truncation</a>
+      <a href="#">Vertical rule</a>
+      <a href="#" style="padding-bottom: 15px;">Visually hidden</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Utilities</h2>
+      <a href="#">API</a>
+      <a href="#">Background</a>
+      <a href="#">Borders</a>
+      <a href="#">Colors</a>
+      <a href="#">Display</a>
+      <a href="#">Flex</a>
+      <a href="#">Float</a>
+      <a href="#">Interactions</a>
+      <a href="#">Link</a>
+      <a href="#">Object fit</a>
+      <a href="#">Opacity</a>
+      <a href="#">Overflow</a>
+      <a href="#">Position</a>
+      <a href="#">Shadows</a>
+      <a href="#">Sizing</a>
+      <a href="#">Spacing</a>
+      <a href="#">Text</a>
+      <a href="#">Vertical align</a>
+      <a href="#">Visibility</a>
+      <a href="#" style="padding-bottom: 15px;">Z-index</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">Extend</h2>
+      <a href="#">Approach</a>
+      <a href="#" style="padding-bottom: 15px;">Icons</a>
+      <h2 style="color: white; font-size: 20px; padding-bottom: 10px; font-weight: bold;">About</h2>
+      <a href="#">Overview</a>
+      <a href="#">Team</a>
+      <a href="#">Brand</a>
+      <a href="#">License</a>
+      <a href="#" style="padding-bottom: 15px;">Translations</a>
+      <hr>
+      <a href="#" style="padding-top: 15px;">Icons</a> 
+      
+
+      
+    </div>
+    <div id="currentHourContainer"></div>
+  </div>
+  <script>
+
+    document.getElementById("iconToggle").addEventListener("click", function() {
+      window.location.href = "bodylight.html";
+    });
+
+    // Retrieve user's email from localStorage
+    const userEmail = localStorage.getItem('email');
+
+    // Manipulate the email to extract the username without the domain
+    const username = userEmail.split('@')[0];
+
+    // Display the username in the header
+    document.getElementById('userEmail').textContent = username;
+
+    // Get current hour to determine the time of day
+    const currentHour = new Date().getHours();
+
+    // Set the greeting based on the time of day
+    let greeting;
+    if (currentHour < 12) {
+      greeting = 'Good Morning!';
+    } else if (currentHour < 18) {
+      greeting = 'Good Afternoon!';
+    } else {
+      greeting = 'Good Evening!';
+    }
+
+    // Display the greeting in the header
+    document.getElementById('greeting').textContent = greeting;
+  </script>
+</body>
+</html>

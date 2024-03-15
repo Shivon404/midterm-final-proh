@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Profile</title>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .bg-image {
+      background-image: url('bg.png');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+    }
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+      /* Dropdown content (hidden by default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(39, 39, 51, 0.8);
+        min-width: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        margin-top: 11px;
+      }
+
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        color: rgb(255, 255, 255);
+        padding: 12px 12px;
+        text-decoration: none;
+        display: block;
+      }
+
+      /* Change color of dropdown links on hover */
+      .dropdown-content a:hover {background-color: rgb(23, 23, 24);}
+
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Container */
+      
+
+      .profile-image {
+          width: 150px; /* Adjust size as needed */
+          height: 150px; /* Adjust size as needed */
+          border-radius: 50%;
+      }
+
+
+      /* Username and email */
+      .h2 {
+        font-size: 20px;
+        margin-bottom: 20px; /* Add space below */
+        color: white;
+        font-weight: bold;
+      }
+
+      /* Style for the username and email */
+      .user-info span {
+        display: block; /* Separate username and email */
+      }
+
+      .mail{
+        color: white;
+        text-decoration: underline;
+        font-size: 18px;
+      }
+        
+  </style>
+</head>
+<body class="bg-image min-h-screen flex items-center h-full">
+  <div class="header">
+    <div class="left-header">
+      <h2 class="greetings">Hello <span id="userEmail"></span>, <span id="greeting"></span></h2>
+    </div>
+    <div class="middle-header">
+    </div>
+    <div class="right-header">
+      <div class="dropdown">
+        <img class="profile-logo" src="b85f3a28fd572685b0dab45537113294.jpg">
+        <div class="dropdown-content">
+          <a href="profile.html">Profile</a>
+          <a href="body.html">Home</a>
+          <a href="html.html">Logout</a>
+        </div>
+      </div>
+      <i id="iconToggle" class="fa fa-sun-o" style="font-size:35px; color: white;"></i>
+    </div>
+  </div>
+
+  <div class="profile-container" style="margin: 0 auto; display: flex; flex-direction: column; align-items: center; padding-top: 30px; text-align: center; background-color: rgba(39, 39, 51, 0.8); width: 300px; height: 350px; border-radius: 15px;">
+    <img class="profile-image" src="b85f3a28fd572685b0dab45537113294.jpg" alt="User Profile">
+  
+    <div class="user-info">
+      <h2 class="h2">Username: </h2>
+      <span id="username" class="mail"></span>
+      <h2 class="h2">Email: </h2>
+      <span id="profileEmail" class="mail"></span>
+    </div>
+    
+  </div>
+
+  
+   
+  <script>
+
+    document.getElementById("iconToggle").addEventListener("click", function() {
+      window.location.href = "profilelight.html";
+    });
+
+    // Retrieve user's email from localStorage
+    const userEmail = localStorage.getItem('email');
+
+    // Manipulate the email to extract the username without the domain
+    const username = userEmail.split('@')[0];
+
+    // Display the username and email
+    document.getElementById('username').textContent = username;
+    document.getElementById('userEmail').textContent = userEmail;
+
+    // Display the email in the profile section
+    document.getElementById('profileEmail').textContent = userEmail;
+
+    document.getElementById('userEmail').textContent = username;
+
+    // Get current hour to determine the time of day
+    const currentHour = new Date().getHours();
+
+    // Set the greeting based on the time of day
+    let greeting;
+    if (currentHour < 12) {
+      greeting = 'Good Morning!';
+    } else if (currentHour < 18) {
+      greeting = 'Good Afternoon!';
+    } else {
+      greeting = 'Good Evening!';
+    }
+
+    // Display the greeting in the header
+    document.getElementById('greeting').textContent = greeting;
+    
+  </script>
+</body>
+</html>
